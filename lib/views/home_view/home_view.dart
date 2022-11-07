@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable
+
 part of './home_imports.dart';
 
 class HomeView extends StatefulWidget {
@@ -21,9 +23,19 @@ class _HomeViewState extends State<HomeView> {
       body: SafeArea(
           child: Padding(
         padding: const EdgeInsets.all(15.0),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+        child: ListView(children: [
           searchWidget(context),
-          displayList(),
+          Consumer<GetResultProvider>(
+              builder: ((context, value, child) => value.loader == true
+                  ? const Padding(
+                      padding: EdgeInsets.only(top: 300.0),
+                      child: Center(
+                        child: CircularProgressIndicator(
+                          color: Colors.black,
+                        ),
+                      ),
+                    )
+                  : const DisplayVerticallist()))
         ]),
       )),
     );

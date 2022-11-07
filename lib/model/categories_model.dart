@@ -1,10 +1,9 @@
 class CategoriesByID {
-  String id = "";
-  String catName = "";
+  String? id;
+  String? catName;
 
   CategoriesByID({
-    required this.id,
-    required this.catName,
+    this.id,
+    this.catName,
   });
-
 }

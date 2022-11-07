@@ -1,19 +1,22 @@
 part of '../home_imports.dart';
 
 Widget searchWidget(BuildContext context) {
-  var width = MediaQuery.of(context).size.width;
+  var width = MediaQuery.of(context).size.width / 100;
+  var height = MediaQuery.of(context).size.height / 100;
+  String? id;
+
   return Center(
     child: Center(child: Consumer<GetLocalCatProvider>(
       builder: (context, v, child) {
         return Autocomplete<CategoriesByID>(
           optionsBuilder: (TextEditingValue textEditingValue) {
             return v.dataGetList
-                .where((CategoriesByID county) => county.catName
+                .where((CategoriesByID county) => county.catName!
                     .toLowerCase()
                     .startsWith(textEditingValue.text.toLowerCase()))
                 .toList();
           },
-          displayStringForOption: (CategoriesByID option) => option.catName,
+          displayStringForOption: (CategoriesByID option) => option.catName!,
           fieldViewBuilder: (BuildContext context,
               TextEditingController fieldTextEditingController,
               FocusNode fieldFocusNode,
@@ -22,8 +25,8 @@ Widget searchWidget(BuildContext context) {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Container(
-                  height: 50,
-                  width: width * 0.65,
+                  height: 7.2 * height,
+                  width: 70.65 * width,
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
@@ -39,11 +42,19 @@ Widget searchWidget(BuildContext context) {
                     style: const TextStyle(fontWeight: FontWeight.w500),
                   ),
                 ),
-                ElevatedButton(onPressed: () {}, child: const Text("Search"))
+                ElevatedButton(
+                    onPressed: () {
+                      Provider.of<GetResultProvider>(context, listen: false)
+                          .searchGetCatProvider(
+                              catId: id, queryType: "getImagesByCats");
+                    },
+                    child: const Text("Search"))
               ],
             );
           },
-          onSelected: (CategoriesByID selection) {},
+          onSelected: (CategoriesByID selection) {
+            id = selection.id;
+          },
           optionsViewBuilder: (BuildContext context,
               AutocompleteOnSelected<CategoriesByID> onSelected,
               Iterable<CategoriesByID> options) {
@@ -55,14 +66,14 @@ Widget searchWidget(BuildContext context) {
                   elevation: 0.5,
                   borderRadius: BorderRadius.circular(15),
                   child: Container(
-                    width: 230,
-                    height: 130,
+                    width: 63.8 * width,
+                    height: 18 * height,
                     color: Colors.white,
                     child: ListView.builder(
                       padding: const EdgeInsets.all(10.0),
                       itemCount: options.length,
                       itemBuilder: (BuildContext context, int index) {
-                        final CategoriesByID option = options.elementAt(index);
+                        CategoriesByID option = options.elementAt(index);
 
                         return GestureDetector(
                           onTap: () {
@@ -78,7 +89,7 @@ Widget searchWidget(BuildContext context) {
                               SizedBox(
                                 height: 40,
                                 child: Center(
-                                  child: Text(option.catName,
+                                  child: Text(option.catName!,
                                       textAlign: TextAlign.center,
                                       style:
                                           const TextStyle(color: Colors.black)),
