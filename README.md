@@ -1,16 +1,34 @@
-# cadtest
+# CAT Testing
+By: Muhammad Omar
+email: muhammadomar29@outlook.com
+Phone: +971 50 4838825
+portfolio: momarkhan.com
 
-A new Flutter project.
+### Task Given
 
-## Getting Started
+Search bar
+- Results displayed per search, with the image rendered and segments drawn over objects 
+pertaining to a searched category that exists in an image
 
-This project is a starting point for a Flutter application.
+### Limitation of this project
 
-A few resources to get you started if this is your first Flutter project:
+Don't iFrame (or any other mechanism for hosting a web page) COCO Explorer into your 
+app.
+- Don't download the entire COCO dataset from the web as a .tar.gz (or similar) in one go 
+(e.g. at app startup in the background) or bundle any part of the dataset into the app 
+package. Only use the APIs that COCO Explorer uses to retrieve content
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+###task Done
+
+✅ Fetch Data in Search
+✅ Retrive Data
+✅ segmentation fetching
+[x] instance mask show 
+
+## Run Project
+
+First run flutter Clean 
+second run pubget
+third Run Project
+
