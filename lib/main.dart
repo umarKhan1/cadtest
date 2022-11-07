@@ -14,14 +14,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-
         ChangeNotifierProvider<GetLocalCatProvider>(
             create: (_) => GetLocalCatProvider()),
         ChangeNotifierProvider<GetResultProvider>(
             create: (_) => GetResultProvider()),
       ],
       child: MaterialApp(
-        title: 'Flutter Demo',
+        title: 'Cat Testing',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.blue,
