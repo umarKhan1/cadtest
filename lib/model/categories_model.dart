@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 class CategoriesByID {
   String? id;
   String? catName;
@@ -9,4 +7,3 @@ class CategoriesByID {
     this.catName,
   });
 }
-

@@ -66,8 +66,8 @@ Widget searchWidget(BuildContext context) {
                   elevation: 0.5,
                   borderRadius: BorderRadius.circular(15),
                   child: Container(
-                    width: 230,
-                    height: 130,
+                    width: 63.8 * width,
+                    height: 18 * height,
                     color: Colors.white,
                     child: ListView.builder(
                       padding: const EdgeInsets.all(10.0),

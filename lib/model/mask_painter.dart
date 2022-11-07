@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
+
 class MaskPainter extends CustomPainter {
   MaskPainter({
     required this.mask,
@@ -21,8 +22,6 @@ class MaskPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    // TODO: implement shouldRepaint
     throw UnimplementedError();
   }
-
 }
