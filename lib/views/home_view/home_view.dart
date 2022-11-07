@@ -23,7 +23,7 @@ class _HomeViewState extends State<HomeView> {
       body: SafeArea(
           child: Padding(
         padding: const EdgeInsets.all(15.0),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+        child: ListView(children: [
           searchWidget(context),
           Consumer<GetResultProvider>(
               builder: ((context, value, child) => value.loader == true

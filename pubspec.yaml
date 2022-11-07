@@ -35,12 +35,12 @@ dependencies:
   dio: ^4.0.6
   http: 
   fancy_shimmer_image: ^2.0.2
-  body_detection: ^0.0.3
+ 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  learning_selfie_segmentation: ^0.0.3
+
 
 dev_dependencies:
   flutter_test:
